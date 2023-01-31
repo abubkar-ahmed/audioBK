@@ -1,0 +1,277 @@
+.register-login{
+    background-color: $card-bg;
+    position: fixed;
+    z-index: 99;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 539px;
+    border-radius: 1rem;
+    padding: 2rem 1rem;
+    max-height: 95vh;
+    overflow-y: scroll;
+    border: 1px solid $orange;
+    animation: pop-up 1s ;
+    &.remove-pop-up{
+        animation: remove-pop-up 1s;
+    }   
+    &::-webkit-scrollbar {
+        width: 5px;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: #d87d4ac2;
+        border-radius: 10px;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+        background: $orange;
+    }
+    .close{
+        position: absolute;
+        top: 1rem;
+        right: 1.5rem;
+        width: fit-content;
+        cursor: pointer;
+        span{
+            color: $orange;
+            font-weight: 700;
+            transition: 0.4s ease all;
+            &:hover{
+                color: red;
+            }
+        }
+    }
+    .register-login-header{
+        h2{
+            letter-spacing: 0.625rem;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            span{
+                font-family: "Sono", sans-serif;
+                color: $orange;
+            }
+        }
+        h3{
+            font-weight: 700;
+            letter-spacing: 0.0806rem;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+        width: 85%;
+        margin: auto;
+        text-align: start;
+        label{
+            margin-bottom: 0.5rem;
+        }
+        input{
+            margin-bottom: 1rem;
+            border: 1px solid #ADADAD;
+            border-radius: 5px;
+            padding: 0.7rem 1.5rem;
+            &:focus{
+                outline: 1px solid #4285F4;
+            }
+        }
+        button{
+            padding: 0.7rem;
+            border-radius: 5px;
+            background-color: $orange;
+            color: $white;
+            border: none;
+            cursor: pointer;
+            margin: 2rem 0;
+            transition: 0.4s ease all;
+            font-weight: 700;
+            &:hover{
+                opacity: 0.8;
+            }
+        }
+        .pwds{
+            display: flex;
+            gap: 1rem;
+            .pwd , .rPwd{
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+                label{
+                    width: 100%;
+                }
+                input{
+                    width: 100%;
+                }
+            }
+        }
+        .img-upload{ 
+            width: fit-content;
+            margin: auto;
+            position: relative;
+            margin-bottom: 1rem;
+            input{
+                display: none;
+            }
+            label{
+                display: block;
+                position: absolute;
+                top: -5px;
+                right: -5px;
+                border-radius: 100%;
+                width: 25px;
+                height: 25px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12);
+                cursor: pointer;
+                
+                i{
+                    font-size: 15px;
+                }
+            }
+            .img-prev{
+                width: 70px;
+                height: 70px;
+                border-radius: 100%;
+                box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.3);
+            }
+            .img{
+                width: 100%;
+                height: 100%;
+                border-radius: 100%;
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center; 
+            }
+        }
+    }
+    .redirect{
+        color: #120e0e;
+        font-weight: 500;
+        line-height: 1.7px;
+        font-size: 0.9375rem;
+        span{
+            color: $orange;
+            cursor: pointer;
+            transition: 0.4s ease all;
+            &:hover{
+                font-weight: 700;
+            }
+        }
+    }
+    .err-msg{
+        text-align: center;
+        color: red;
+        text-transform: capitalize;
+    }
+    &.verification{
+        h3{
+            font-size: 1.5rem;
+            width: 75%;
+            margin: auto;
+            margin-bottom: 2rem;
+        }
+        form{
+            div{
+                display: flex;
+                flex-direction: column;
+                p{
+                    font-size: 14px;
+                    color: gray;
+                }
+            }
+        }
+    }
+    &.login{
+        .forgotPwd{
+            color: $orange;
+            font-weight: 700;
+            width: fit-content;
+            margin-left: auto;
+            margin-bottom: 1rem;
+            cursor: pointer;
+            transition: 0.4s ease all;
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+    &.reset-pwd{
+        .register-login-header{
+            h3{
+                position: relative;
+                width: fit-content;
+                margin-left: auto;
+                margin-right: auto;
+                span{
+                    height: 5px;
+                    background-color: $orange;
+                    position: absolute;
+                    bottom: -20px;
+                    left: 0;
+                    &.width-25{
+                        width: 25%;
+                    }
+                    &.width-75{
+                        width: 75%;
+                    }
+                    &.width-90{
+                        width: 90%;
+                    }
+                }
+            }
+        }
+
+        .steps{
+            margin: 1.5rem 0;
+        }
+    }
+    .invailed{
+        border: 1px solid red;
+    }
+}
+
+@media (max-width : 668px) {
+    .register-login{
+        width: 98%;
+        form{
+            .pwds{
+                flex-direction: column;
+                .pwd , .rPwd{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+@keyframes pop-up {
+    from{
+        opacity: 0;
+        transform: translate(-50%,-50%) scale(0 , 0);
+    }
+    to{
+        opacity: 1;
+        transform: translate(-50%,-50%) scale(1 , 1);
+    }
+}
+
+@keyframes remove-pop-up {
+    from{
+        opacity: 1;
+        transform: translate(-50%,-50%) scale(1 , 1);
+    }
+    to{
+        opacity: 0;
+        transform: translate(-50%,-50%) scale(0 , 0);
+    }
+}
+
+

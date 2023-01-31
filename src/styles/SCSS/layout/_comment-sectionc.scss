@@ -1,0 +1,319 @@
+.comments{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin: 6rem 0;
+    .comment-h2{
+        width: 669px;
+        margin: auto;
+    }
+    .card{
+        display: flex;
+        background-color: $card-bg;
+        border-radius: 0.5rem;
+        padding: 1rem;
+        flex-direction: column;
+        width: 669px;
+        margin: auto;
+        min-height: 135px;
+        .card-header{
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            .user-info{
+                display: flex;
+                width: fit-content;
+                gap: 1rem;
+                justify-content: center;
+                align-items: center;
+                // background-color: blue;
+                img{
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 100%;
+                    cursor: pointer;
+                    transition: 0.4s ease all;
+                    border: 1px solid transparent;
+                    &:hover{
+                        border: 1px solid $orange;
+                    }
+                }
+                h2{
+                    font-size: 1.2rem;
+                }
+
+            }
+            h3{
+                font-size: 14px;
+                text-transform: capitalize;
+                font-weight: 400;
+                color: $font-color-2;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+
+        }
+        p{
+            width: 85%;
+            margin: auto;
+            color: $font-color-2;
+            margin-bottom: 1.5rem;
+            margin-left: 10%;
+        }
+        .update-form{
+            width: 85%;
+            margin: auto;
+            margin-bottom: 1.5rem;
+            margin-left: 10%;
+            display: flex;
+            gap: 1rem;
+            textarea{
+                resize: none;
+                border: 1px solid $orange;
+                border-radius: 0.5rem;
+                padding: 0.5rem;
+                min-width: 400px;
+                min-height: 90px;
+                background-color: transparent;
+                &:focus{
+                    outline: none;
+                }
+            }
+            .buttons{
+                width: 100%;
+                // background-color: red;
+                display: flex;
+                justify-content: center;
+                button {
+                    background-color: rebeccapurple;
+                    height: fit-content;
+                    border-radius: 0.5rem;
+                    background-color: $orange;
+                    color: white;
+                    cursor: pointer;
+                    transition: 0.4s ease all;
+                    &:hover{
+                        opacity: 0.8;
+                    }
+                }
+                .loading{
+                    margin: 0;
+                    // background-color: red;
+                    
+                }
+            }
+        }
+        .user-controls{
+            display: flex;
+            justify-content: space-between;
+            margin-left: 10%;
+            .edit-delete{
+                display: flex;
+                width: fit-content;
+                gap: 1rem;
+                min-width: 100px;
+                min-height: 24px;
+                .delete,.edit{
+                    width: fit-content;
+                    display: flex;
+                    gap: 0.2rem;
+                    font-weight: 700;
+                    cursor: pointer;
+                    transition: 0.4s ease all;
+                    &.delete{
+                        color: $red;
+                        &:hover{
+                            color : red ;
+                        }
+                    }
+                    &.edit{
+                        color: $edit-color;
+                        &:hover{
+                            color: #1216a3;
+                        }
+                    }
+    
+                }
+            }
+            .likes{
+                display: flex;
+                gap: 0.5rem;
+                justify-content: center;
+                align-items: center;
+                margin-left: auto;
+                h3{
+                    font-size: 16px;
+                    font-weight: 400;
+                    color: $orange;
+                }
+                .material-symbols-outlined.disabled {
+                    font-variation-settings:
+                    'FILL' 1,
+                    'wght' 400,
+                    'GRAD' 0,
+                    'opsz' 24
+                }
+                .material-symbols-outlined.not-disabled {
+                    font-variation-settings:
+                    'FILL' 0,
+                    'wght' 400,
+                    'GRAD' 0,
+                    'opsz' 24
+                }
+                span{
+                    transition: 0.4s ease all;
+                    border-radius: 50%;
+                    color: $orange;
+                    &.not-disabled{
+                        cursor: pointer;
+                        &:hover{
+                            color: orange;
+                        }
+                    }
+
+                    
+                }
+            }
+        }
+        &.new-comment{
+            flex-direction: row;
+            justify-content: center;
+            gap: 1rem;
+            img{
+                width: 45px;
+                height: 45px;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+            form{
+                display: flex;
+                gap: 1rem;
+                textarea{
+                    resize: none;
+                    background-color: transparent;
+                    border: 1px solid $orange;
+                    border-radius: 0.5rem;
+                    padding: 0.5rem;
+                    min-width: 400px;
+                    &:focus{
+                        outline: none;
+                    }
+                }
+                button{
+                    background-color: $orange;
+                    width: fit-content;
+                    height: fit-content;
+                    color: white;
+                    border-radius: 0.4rem;
+                    cursor: pointer;
+                    margin-left: auto;
+                    transition: 0.4s ease all;
+                    &:hover{
+                        opacity: 0.8;
+                    }
+                }
+            }
+        }
+
+    }
+    .pop-up{
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 2rem  1rem;
+        border-radius: 0.5rem;
+        background-color: $card-bg;
+        border: 1px solid $orange;
+        z-index: 98;
+        animation: pop-up 1s ;
+        &.remove-pop-up{
+            animation: remove-pop-up 1s;
+        }
+        h2{
+            letter-spacing: 0.125rem;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        p{
+            margin: 0;
+            width: 100%;
+            margin-bottom: 0.7rem;
+            font-size: 1rem;
+        }
+        .controls{
+            display: flex;
+            gap: 1rem;
+            button{
+                width: 50%;
+                color: white;
+                cursor: pointer;
+                transition: 0.4s ease all;
+                &:hover{
+                    opacity: 0.8;
+                }
+                &.cancel{
+                    background-color: gray;
+                }
+                &.delete{
+                    background-color: $red;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                }
+            }
+            .loading{
+                margin: 0 auto;
+            }
+        }
+    }
+}
+
+@media (max-width:668px) {
+    .comments{
+        padding: 0 0.7rem;
+        .comment-h2{
+            width: 100%;
+        }
+        .card{
+            width: 100%;
+            p{
+                margin-top: 0.7rem;
+            }
+            .update-form{
+                width: 100%;
+                flex-direction: column;
+                margin: 2rem 0;
+                textarea{
+                    min-height: 100px;
+                    min-width: 80%;
+                }
+            }
+            .user-controls{
+                margin: 0;
+            }
+            &.new-comment{
+                flex-direction: column;
+                form{
+                    flex-direction: column;
+                    width: 100%;
+                    textarea{
+                        min-height: 100px;
+                        min-width: 80%;
+                    }
+                    
+                }
+            }
+        }
+    }
+}
+

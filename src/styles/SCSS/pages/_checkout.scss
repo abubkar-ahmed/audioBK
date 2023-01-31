@@ -1,0 +1,495 @@
+.checkout{
+    .go-back{
+        text-transform: capitalize;
+        letter-spacing: 0.0625rem;
+        font-size: 0.9375rem;
+        color: rgba(0, 0, 0, 0.5019607843);
+        background-color: transparent;
+        border: none;
+        margin: 2.5rem 1rem;
+        width: fit-content;
+        font-weight: 400;
+        cursor: pointer;
+        transition: 0.4s ease all;
+        &:hover{
+            color: $black;
+        }
+    }
+    .checkout-container{
+        width: 760px;
+        margin: auto;
+        text-align: start;
+        background-color: #f1f1f15c;
+        border-radius: 0.5rem;
+        padding: 2rem;
+        margin-bottom: 4rem;
+        .checkout-header{
+            margin-bottom: 2rem;
+            font-size: 1.75rem;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            .billing-datiles , .shipping-info , .payment-datils{
+                display: flex;
+                flex-wrap: wrap;
+                gap: 1rem;
+                margin-bottom: 2rem;
+                h3{
+                    margin-bottom: 1rem;
+                    width: 100%;
+                    font-size: 0.8125rem;
+                    letter-spacing: 0.0581rem;
+                    color: $orange;
+                    font-weight: 700;
+                }
+                .input-div{
+                    width: calc(50% - 0.5rem);
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 0.5rem;
+                    justify-content: space-between;
+                    label{
+                        width: fit-content;
+                        font-size: 0.75rem;
+                        font-weight: 700;
+                        color: $black;
+                    }
+                    .err-msg{
+                        line-height: 1.66;
+                        font-size: 0.75rem;
+                        font-weight: 400;
+                        color: red;
+                    }
+                    input{
+                        width: 100%;
+                        border-radius: 0.5rem;
+                        padding: 1rem;
+                        font-size: 0.875rem;
+                        border: 1px solid #ADADAD;
+                        transition: 0.4s ease all;
+                        background-color: transparent;
+                        &:focus{
+                            outline: none;
+                            border: 1px solid $orange;
+                        }
+                        &.err{
+                            border-color: red;
+                        }
+                        &:visited{
+                            background-color: red;
+                        }
+                    }
+                    input::-webkit-outer-spin-button,
+                    input::-webkit-inner-spin-button {
+                    -webkit-appearance: none;
+                    margin: 0;
+                    }
+                    &.address{
+                        width: 100%;
+                    }
+                }
+            }
+            .payment-datils{
+                .payment-div{
+                    width: 100%;
+                    h4{
+                        width: fit-content;
+                        font-size: 0.75rem;
+                        font-weight: 700;
+                        color: $black;
+                        margin-bottom: 1rem;
+                    }
+                    .choice{
+                        display: flex;
+                        margin-bottom: 1rem;
+                        gap: 1rem;
+                        .cash-on-delivry,.e-money{
+                            width: 50%;
+                            padding: 1rem;
+                            border-radius: 0.5rem;
+                            display: flex;
+                            gap: 1rem;
+                            align-items: center;
+                            border: 1px solid #ADADAD;
+                            font-size: 0.875rem;
+                            font-weight: 700;
+                            cursor: pointer;
+                            transition: 0.4s ease all;
+                            &:hover{
+                                border-color: $orange;
+                            }
+                            div{
+                                width: 18px;
+                                height: 18px;
+                                border-radius: 50%;
+                                border: 1px solid #ADADAD;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                            }
+                            &.active{
+                                border-color: $orange;
+                                div{
+                                    span{
+                                        width: 10px;
+                                        height: 10px;
+                                        border-radius: 50%;
+                                        background-color: $orange;
+                                    }
+                                }
+                            }
+                            &.err{
+                                border-color: red;
+                            }
+                            
+                        }
+                    }
+                    .payment-about{
+                        display: flex;
+                        gap: 2rem;
+                        align-items: center;
+                        margin-top: 1.5rem;
+                        img{
+                            width: 48px;
+                            height: 48px;
+                        }
+                        p{
+                            line-height: 1.66;
+                            font-size: 0.9375rem;
+                            color: $font-color-2;
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+    .summary-container{
+        width: 760px;
+        margin: auto;
+        text-align: start;
+        background-color: #f1f1f15c;
+        border-radius: 0.5rem;
+        padding: 2rem;
+        margin-bottom: 4rem;
+        .summary-header{
+            margin-bottom: 2rem;
+            font-size: 1.75rem;
+        }
+        .sumarry{
+            .card {
+                display: flex;
+                align-items: center;
+                gap: 2rem;
+                // margin: auto;
+                margin-bottom: 2rem;
+                img{
+                    width: 85px;
+                    height: 85px;
+                    border-radius: 0.5rem;
+                    object-fit: contain;
+                }
+                .card-info{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.5rem;
+                    width: fit-content;
+                    h3.h4{
+                        line-height: 1.66;
+                        font-size: 0.9375rem;
+                        color: $black;
+                    }
+                    h4{
+                        color: $font-color-2;
+                    }
+                }
+                .controls{
+                    margin-left: auto;
+                    display: flex;
+                    align-items: center;
+                    gap: 1.5rem;
+                    .quantity-controls{
+                        // margin-left: auto;
+                        // margin-right: 1rem;
+                        display: flex;
+                        background-color: white;
+                        border-radius: 0.5rem;
+                        span{
+                            padding: 1rem;
+                        }
+                        .minus, .plus{
+                            cursor: pointer;
+                            transition: 0.4s ease all;
+                            &:hover{
+                                color: $orange;
+                                background-color: #80808014;
+                            }
+                        }
+                    }
+                    .delete{
+                        background-color: transparent;
+                        border: none;
+                        font-size: 14px;
+                        padding: 5px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        font-weight: 400;
+                        color: $orange;
+                        transition: 0.4s ease all;
+                        cursor: pointer;
+                        &:hover{
+                            background-color: $orange;
+                            color: white;
+                        }
+                    }
+                }
+
+            }
+            .total{
+                // background-color: red;
+                width: 400px;
+                margin: 2rem auto;
+                ul{
+                    // background-color: rebeccapurple;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.5rem;
+                    li{
+                        display: flex;
+                        justify-content: space-between;
+                        span{
+                            line-height: 1.66;
+                            font-size: 0.9375rem;
+                            text-transform: uppercase;
+                            font-weight: 400;
+                            color: $font-color-2;
+                            &.price{
+                                color: $black;
+                                font-weight: 700;
+                                font-size: 1.125rem;
+                            }
+                        }
+                    }
+                }
+            }
+            .continue{
+                width: 320px;
+                margin:  auto ;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 1rem 0;
+                border: none;
+                background-color: $orange;
+                color: white;
+                font-weight: 700;
+                font-size: 0.8125rem;
+                text-transform: uppercase;
+                cursor: pointer;
+                transition: 0.4s ease all;
+                &:hover{
+                    opacity: 0.8;
+                }
+            }
+            .loading-container{
+                width: fit-content;
+                margin: auto;
+            }
+        }
+    }
+    .thank-you{
+        background-color: #15161878;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 100;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .thank-you-card{
+            background-color: white;
+            width: 550px;
+            border-radius: 0.5rem;
+            padding: 3rem  2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+            border: 1px solid $orange;
+            animation: pop-up-check-out 1s ;
+            img{
+                width: 65px;
+                height: 65px;
+            }
+            h2{
+                text-transform: uppercase;
+                // margin-bottom: 1rem;
+                font-size: 2rem;
+                color: $black;
+                font-weight: 700;
+                line-height: 1.125;
+            }
+            p{
+                line-height: 1.66;
+                font-size: 0.9375rem;
+                color: $font-color-2;
+                text-transform: capitalize;
+            }
+            .grand-total{
+                background-color: $black;
+                color: white;
+                width: 70%;
+                border-radius: 0.5rem;
+                height: 120px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 0.5rem;
+                margin: 1rem 0;
+                span{
+                    line-height: 1.66;
+                    font-size: 0.9rem;
+                    color: white;
+                    text-transform: uppercase;
+                    font-weight: 700;
+                    &.grand{
+                        font-weight: 400;
+                        color: $font-color-1;
+                    }
+                }
+            }
+            .back-to-home{
+                border: none;
+                background-color: $orange;
+                width: 70%;
+                padding: 0.7rem 0;
+                color: white;
+                font-weight: 700;
+                cursor: pointer;
+                transition: 0.4s ease all;
+                &:hover{
+                    opacity: 0.8;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:1023px) {
+    .checkout{
+        padding: 0 1rem;
+        .checkout-container,.summary-container{
+            width: 100%;
+        }
+    }
+}
+
+@media (max-width:668px) {
+    .checkout{
+        .checkout-container{
+            padding: 2rem 0.5rem;
+            .checkout-header{
+                font-size: 1.4rem;
+            }
+            form{
+                .billing-datiles , .shipping-info , .payment-datils{
+                    .input-div{
+                        width: 100%;
+                    }
+                }
+                .payment-datils{
+                    .payment-div{
+                        width: 100%;
+                        h4{
+                            width: fit-content;
+                            font-size: 0.75rem;
+                            font-weight: 700;
+                            color: $black;
+                            margin-bottom: 1rem;
+                        }
+                        .choice{
+                            flex-direction: column;
+                            .cash-on-delivry,.e-money{
+                                width: 100%;
+                            }
+                        }
+                        .payment-about{
+                            gap: 1rem;
+                            margin-top: 2rem;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: flex-start;
+                        }
+                    }
+                }
+    
+            }
+        }
+        .summary-container{
+            padding: 2rem 0.5rem;
+            .summary-header{
+                font-size: 1.4rem;
+            }
+            .sumarry{
+                .card {
+                    width: 100%;
+                    gap: 1rem;
+                    margin-bottom: 2rem;
+                    padding-bottom: 1rem;
+                    border-bottom: 1px solid #0000001a;
+                    .card-info{
+                        h3,h4{
+                            font-size: 0.775rem;
+                        }
+                    }
+                    .controls{
+                        flex-direction: column;
+                        gap: 0.5rem;
+                        .quantity-controls{
+                            span{
+                                padding: 0.5rem;
+                                font-size: 14px;
+                            }
+                        }
+                    }
+
+                }
+                .total{
+                    width: 100%;
+                }
+                .continue{
+                    width: 100%;
+                }
+            }
+        }
+        .thank-you{
+            .thank-you-card{
+                width: 100%;
+                height: 100%;
+                padding: 3rem  1rem;
+                .grand-total{
+                    width: 100%;
+                }
+                .back-to-home{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+@keyframes pop-up-check-out {
+    from{
+        opacity: 0;
+        transform: scale(0 , 0);
+    }
+    to{
+        opacity: 1;
+        transform: scale(1 , 1);
+    }
+}
