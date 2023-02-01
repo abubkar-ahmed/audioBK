@@ -47,6 +47,7 @@ function ResetPwd() {
                 setSteps(2);
                 setLoading(false);
             }).catch(err => {
+                console.log(err);
                 setLoading(false);
                 if(err?.response?.status === 400){
                     if(err?.response?.data?.message === 'User Not Found'){
@@ -80,6 +81,7 @@ function ResetPwd() {
                 setSteps(3);
                 setLoading(false);
             }).catch(err => {
+                console.log(err)
                 setLoading(false);
                 if(err?.response?.status === 400){
                     if(err?.response?.data?.message === 'User Not Found'){
@@ -124,6 +126,7 @@ function ResetPwd() {
                 setAuthStatus('login');
                 setLoading(false);
             }).catch(err => {
+                console.log(err);
                 setLoading(false);
                 if(err?.response?.status === 400){
                     if(err?.response?.data?.message === 'User Not Found'){
