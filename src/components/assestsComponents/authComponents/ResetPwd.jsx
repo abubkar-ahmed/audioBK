@@ -73,7 +73,7 @@ function ResetPwd() {
             setLoading(false);
         }else{
             const axios1 = axios.create({
-                baseURL: 'http://localhost:3500',
+                baseURL: 'https://audiobk-api.onrender.com',
             });
     
             axios1.put('/login',{step : 2 ,email : inputs.email , code : inputs.code}).then(res => {
@@ -117,7 +117,7 @@ function ResetPwd() {
             }
         }else{
             const axios1 = axios.create({
-                baseURL: 'http://localhost:3500',
+                baseURL: 'https://audiobk-api.onrender.com',
             });
     
             axios1.put('/login',{step : 3 ,email : inputs.email , code : inputs.code , pwd : inputs.pwd , rPwd : inputs.rPwd}).then(res => {
