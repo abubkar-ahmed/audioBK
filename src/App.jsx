@@ -191,6 +191,7 @@ function App() {
     ): (
       <div className="main-loading">
         <Loading/>
+        <p>Please Wait This Might Take Up To 30 Second</p>
       </div>
       
     )}
